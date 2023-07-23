@@ -7,10 +7,11 @@ interface IconProps {
   icon: IconProp;
   size?: SizeProp;
   className?: string
+  color?: string
 }
 
-const Icon: React.FC<IconProps> = ({ icon, size, className }) => {
-  return <FontAwesomeIcon size={size} icon={icon} className={className} />;
+const Icon: React.FC<IconProps> = ({ icon, size, className, color }) => {
+  return <FontAwesomeIcon size={size} icon={icon} color={color} className={className} />;
 };
 
 export default Icon;

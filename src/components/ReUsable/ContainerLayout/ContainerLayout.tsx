@@ -7,7 +7,7 @@ interface Props {
 export default function ContainerLayout({ children }: Props) {
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto  bg-[#e3ded5] px-4 py-4 my-12 rounded-md sm:px-6">
+      <div className="container mx-auto h-auto p-2 my-6 rounded-md">
         {children}
       </div>
     </div>
