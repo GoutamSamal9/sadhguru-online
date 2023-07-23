@@ -13,12 +13,12 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-[#28231e] h-auto">
-      <div className="mx-auto py-4 text-[#aea493] pt-10 flex justify-between items-center max-w-7xl sm:px-6 lg:px-8">
-        <div className="w-1/3 h-36">
+      <div className="mx-auto py-4 text-[#aea493] pt-10 flex justify-between items-center max-w-7xl sm:px-6 flex-col lg:px-8 lg:flex-row ">
+        <div className="w-3/4 lg:w-1/3 h-36">
           <h3 className="text-2xl text-center font-semibold text-[#cd6727]">
             Contact Us
           </h3>
-          <div className="mt-4">
+          <div className="mt-4 text-center">
             <Icon icon={faLocationDot} /> India Isha Yoga Centre, Velliangiri
             Foothills, Ishana Vihar Post, Coimbatore, Tamil Nadu - 641114
             <div className="mt-2">
@@ -31,10 +31,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 h-28 flex justify-center">
+        <div className="flex justify-center w-3/4 lg:w-1/3 h-32 lg:h-28 rotate-90 lg:rotate-0 ">
           <img src={dividerFlower} alt="" />
         </div>
-        <div className="w-1/3 h-36">
+        <div className="w-3/4 lg:w-1/3 h-28">
           <h3 className="text-2xl text-center font-semibold text-[#cd6727]">
             Find Us in social media
           </h3>
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" border-t-[1px] text-[#6e665b] border-[#8a8173] flex items-center justify-center py-6">
+      <div className=" border-t-[1px] text-[#6e665b] border-[#8a8173] flex items-center justify-center py-6  flex-col lg:flex-row ">
         Copyright © 1999 - 2023{"   "}
         <Link
           to={
@@ -88,7 +88,8 @@ const Footer = () => {
         >
         Isha Foundation. All Rights Reserved.{" "}
         </Link>{" "}
-        <span className="px-1 text-gray-300">|</span>
+        <span className="px-1 text-gray-300 hidden lg:block">|</span>
+        <div>
         <Link
           to={
             "https://isha.sadhguru.org/in/en/copyright-privacy-policy-terms?_ga=2.92219930.1406400090.1689585913-1001437725.1689057022&_gl=1*t25u4j*_ga*MTAwMTQzNzcyNS4xNjg5MDU3MDIy*_ga_SY4BXCXZFY*MTY4OTc2MDkzOC4xNi4xLjE2ODk3NjA5NDguNTAuMC4w"
@@ -96,14 +97,16 @@ const Footer = () => {
         >
           Terms & Conditions
         </Link>{" "}
-        <span className="px-1 text-gray-300">|</span>
         <Link
           to={
             "https://isha.sadhguru.org/in/en/copyright-privacy-policy-terms?_ga=2.92219930.1406400090.1689585913-1001437725.1689057022&_gl=1*t25u4j*_ga*MTAwMTQzNzcyNS4xNjg5MDU3MDIy*_ga_SY4BXCXZFY*MTY4OTc2MDkzOC4xNi4xLjE2ODk3NjA5NDguNTAuMC4w"
           }
         >
+        <span className="px-1 text-gray-300">|</span>
           Privacy Policy
         </Link>
+        </div>
+        
       </div>
     </footer>
   );
