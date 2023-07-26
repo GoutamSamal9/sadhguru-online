@@ -78,7 +78,7 @@ const EventsSection = () => {
       </div>
       <ContainerLayout>
         <div className="flex w-full flex-wrap">
-          {filteredEvent.map((each, index) => (
+          {filteredEvent.map((each, index:number) => (
             <Card key={index} each={each} />
           ))}
         </div>
