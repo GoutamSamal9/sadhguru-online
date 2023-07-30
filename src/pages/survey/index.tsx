@@ -1,8 +1,8 @@
-import SurveySection from "../../components/Survey/SurveySection";
+import SurveyContainer from "../../components/Survey/SurveyContainer/SurveyContainer";
 
 const Survey=()=>{
     return(
-        <SurveySection />
+        <SurveyContainer />
     )
 }
 export default Survey;
