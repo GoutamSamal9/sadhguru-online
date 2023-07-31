@@ -7,6 +7,8 @@ import {
 import MultilineTextBox from "../InputTypes/MultilineTextBox/MultilineTextBox";
 import SingleLineTextBox from "../InputTypes/SingleLineTextBox/SingleLineTextBox";
 import MultiChoiceMultipleAnswers from "../InputTypes/MultiChoiceMultipleAnswers/MultiChoiceMultipleAnswers";
+import DateInputType from "../InputTypes/DateInputType/DateInputType";
+import MatrixInputType from "../InputTypes/MatrixInputType/MatrixInputType";
 
 interface QuestionProps {
   question: QuestionInterface;
@@ -16,7 +18,8 @@ const Question: React.FC<QuestionProps> = ({ question }) => {
   const input = (
     type: string,
     validation: Validation[],
-    answer: Answer[]
+    answer: Answer[],
+    row: string[]
   ): ReactNode => {
     switch (type) {
       case "Multi Line Text Box":
@@ -25,6 +28,10 @@ const Question: React.FC<QuestionProps> = ({ question }) => {
         return <SingleLineTextBox validation={validation} />;
       case "Multi Choice - Multiple Answers":
         return <MultiChoiceMultipleAnswers answers={answer} />;
+      case "Date":
+        return <DateInputType label="Choose your date" />;
+      case "Matrix":
+        return <MatrixInputType answers={answer} rows={row}  />;
 
       default:
         break;
@@ -40,7 +47,8 @@ const Question: React.FC<QuestionProps> = ({ question }) => {
           {input(
             question.type,
             question.validations ?? [],
-            question.answers ?? []
+            question.answers ?? [],
+            question.rows ?? []
           )}
         </div>
       </div>

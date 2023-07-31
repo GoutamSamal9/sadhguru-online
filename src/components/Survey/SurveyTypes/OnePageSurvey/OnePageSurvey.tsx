@@ -1,8 +1,7 @@
-import { SurveyInterface } from "../../../../interface/survey/surveyInterface";
 
 
 interface OnePageSurveyProps{
-    surveyData: SurveyInterface
+    surveyData: any
     sections: any
 }
 

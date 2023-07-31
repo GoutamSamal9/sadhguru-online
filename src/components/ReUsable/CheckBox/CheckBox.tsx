@@ -1,14 +1,16 @@
-import React from 'react';
-import InputField from '../InputField/InputField';
+import React, { InputHTMLAttributes } from "react";
+import InputField from "../InputField/InputField";
 
-interface CheckBoxProps {
-  id: string;
+interface CheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   description?: string;
-  value: string
 }
 
-const CheckBox: React.FC<CheckBoxProps> = ({ id, label, description, value }) => {
+const CheckBox: React.FC<CheckBoxProps> = ({
+  label,
+  description,
+  ...props
+}) => {
   return (
     <fieldset>
       <legend className="sr-only">{label}</legend>
@@ -16,19 +18,19 @@ const CheckBox: React.FC<CheckBoxProps> = ({ id, label, description, value }) =>
         <div className="relative flex items-start">
           <div className="flex h-6 items-center">
             <InputField
-              id={id}
-              aria-describedby={`${id}-description`}
-              name={id}
+              {...props}
+              aria-describedby={`${props.id}-description`}
+              name={props.id}
               type="checkbox"
               className="h-4 w-4 rounded border-gray-300"
-              value={value}
+              value={props.value}
             />
           </div>
           <div className="ml-3  leading-6">
-            <label htmlFor={id} className="text-md font-medium text-gray-900">
+            <label htmlFor={props.id} className="text-md font-medium text-gray-900">
               {label}
             </label>
-            <p id={`${id}-description`} className="text-gray-500 text-sm">
+            <p id={`${props.id}-description`} className="text-gray-500 text-sm">
               {description}
             </p>
           </div>

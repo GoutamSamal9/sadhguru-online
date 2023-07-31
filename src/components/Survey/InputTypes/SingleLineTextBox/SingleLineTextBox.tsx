@@ -4,6 +4,7 @@ import InputField from "../../../ReUsable/InputField/InputField";
 
 interface SingleLineTextBoxProps {
   validation: Validation[];
+  type?: string
 }
 
 const SingleLineTextBox = ({ validation }: SingleLineTextBoxProps) => {
